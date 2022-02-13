@@ -1822,6 +1822,7 @@ onPlayerSpawned()
 		
 		self freezecontrols( false );
 
+
 		self init_player_offhand_weapons();
 
 		self enablehealthshield( false );
@@ -1839,7 +1840,7 @@ onPlayerSpawned()
 			"cg_thirdPersonAngle", "0", 
 			"player_backSpeedScale", "1",
 			"player_strafeSpeedScale", "1");
-
+		
 		self setClientDvar("hud_zone_name_on_game", 1);
 		self setClientDvar("hud_health_bar_on_game", 1);
 		self SetDepthOfField( 0, 0, 512, 4000, 4, 0 );
@@ -1921,6 +1922,10 @@ onPlayerSpawned()
 				self thread health_bar_hud();
 				self thread hud_zombies_remaining();
 				self thread hud_sph();
+
+				wait(3);
+				self setblur(0, .1);
+
 			}
 		}
 	}
